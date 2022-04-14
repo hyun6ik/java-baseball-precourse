@@ -4,7 +4,6 @@ import baseball.domain.ball.BallService;
 import baseball.domain.ball.Balls;
 import baseball.domain.game.GameService;
 
-import java.util.List;
 
 public class GameFacade {
 
@@ -17,7 +16,7 @@ public class GameFacade {
     }
 
     public Balls gameStart() {
-        final List<Integer> numbers = gameService.requestNumber();
+        final String numbers = gameService.requestNumber();
         gameService.validateNumber(numbers);
         return ballService.makeBalls(numbers);
     }

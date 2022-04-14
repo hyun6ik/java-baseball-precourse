@@ -2,13 +2,11 @@ package baseball.domain.game;
 
 import baseball.domain.ball.Balls;
 
-import java.util.List;
-
 public interface GameService {
 
-    List<Integer> requestNumber();
+    String requestNumber();
 
-    void validateNumber(List<Integer> numbers);
+    void validateNumber(String numbers);
 
     String judge(Balls balls);
 
