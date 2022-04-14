@@ -2,7 +2,9 @@ package baseball.infrastructure.game.validator;
 
 import baseball.domain.game.validator.GameValidator;
 import baseball.utils.messge.ErrorMessage;
+import baseball.utils.messge.Number;
 
+import java.util.HashSet;
 import java.util.regex.Pattern;
 
 public class GameValidatorImpl implements GameValidator {
@@ -19,8 +21,17 @@ public class GameValidatorImpl implements GameValidator {
         }
     }
 
+    /**
+     * 중복되는 숫자가 있으면 에러 발생
+     */
     @Override
     public void isNotDuplicate(String numbers) {
-
+        final HashSet<Character> set = new HashSet<>();
+        for (char aChar : numbers.toCharArray()) {
+            set.add(aChar);
+        }
+        if (set.size() != Number.INPUT_MAX_VALUE) {
+            throw new IllegalArgumentException(ErrorMessage.CONTAIN_DUPLICATE_NUMBER);
+        }
     }
 }

@@ -25,7 +25,8 @@ public class GameServiceImpl implements GameService {
 
     @Override
     public void validateNumber(String numbers) {
-        gameValidator.validateIsInteger(numbers);
+        gameValidator.isInteger(numbers);
+        gameValidator.isNotDuplicate(numbers);
     }
 
     @Override
