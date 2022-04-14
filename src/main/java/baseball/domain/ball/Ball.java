@@ -22,7 +22,7 @@ public class Ball {
         return number;
     }
 
-    public int position() {
+    public int getPosition() {
         return position;
     }
 }
