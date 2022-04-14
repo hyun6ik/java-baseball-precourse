@@ -20,5 +20,12 @@ class BallFactoryTest {
         assertThat(list).containsExactly(1, 2, 3);
     }
 
+    @Test
+    @DisplayName("랜덤으로 3자리 숫자 받기")
+    void getRandomNumbers() {
+        final List<Integer> randomNumbers = ballFactory.getRandomNumbers();
+        assertThat(randomNumbers.size()).isEqualTo(3);
+    }
+
 
 }
