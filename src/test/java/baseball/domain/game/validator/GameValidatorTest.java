@@ -12,6 +12,15 @@ class GameValidatorTest {
     GameValidator gameValidator = new GameValidatorImpl();
 
     @Test
+    @DisplayName("입력 받은 값이 3자리 수가 아니면 IllegalArgumentException 발생")
+    void isThreeDigits_fail() {
+        final String numbers = "1234";
+        assertThatThrownBy(() -> gameValidator.isThreeDigits(numbers))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage(ErrorMessage.IS_NOT_THREE_DIGITS);
+    }
+
+    @Test
     @DisplayName("입력 받은 값이 숫자가 아니거나 0이 포함되어 있으면 IllegalArgumentException 발생")
     void isInteger_fail() {
         final String numbers = "12a";

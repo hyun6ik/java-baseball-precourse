@@ -12,6 +12,16 @@ public class GameValidatorImpl implements GameValidator {
     private static final Pattern isNumber = Pattern.compile("^[1-9]*?");
 
     /**
+     * 3자리 숫자가 아니면 에러 발생
+     */
+    @Override
+    public void isThreeDigits(String numbers) {
+        if (numbers.toCharArray().length != Number.INPUT_MAX_VALUE) {
+            throw new IllegalArgumentException(ErrorMessage.IS_NOT_THREE_DIGITS);
+        }
+    }
+
+    /**
      * 문자열이나 0이 포함되어 있으면 에러 발생
      */
     @Override
