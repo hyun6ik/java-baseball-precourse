@@ -18,6 +18,6 @@ public class GameFacade {
     public Balls requestPlayerBalls() {
         final String numbers = gameService.requestNumber();
         gameService.validateNumber(numbers);
-        return ballService.makeBalls(numbers);
+        return ballService.createPlayerBalls(numbers);
     }
 }

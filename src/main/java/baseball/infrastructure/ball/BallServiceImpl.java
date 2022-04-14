@@ -18,8 +18,13 @@ public class BallServiceImpl implements BallService {
     }
 
     @Override
-    public Balls makeBalls(String numbers) {
+    public Balls createPlayerBalls(String numbers) {
         final List<Integer> numberList = ballFactory.numbersToIntegerList(numbers);
         return ballCreator.createBalls(numberList);
+    }
+
+    @Override
+    public Balls createAnswerBalls() {
+        return null;
     }
 }
