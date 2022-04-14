@@ -15,8 +15,9 @@ public class GameController {
     }
 
     public void baseBallGame() {
-        final Balls balls = gameFacade.gameStart();
-        final String answerMessage = gameService.judge(balls);
+        final Balls answerBall = gameService.createAnswerBalls();
+        final Balls playerBall = gameFacade.requestPlayerBalls();
+        final String answerMessage = gameService.judge(playerBall);
         gameService.gameEndOrReStart(answerMessage);
     }
 }

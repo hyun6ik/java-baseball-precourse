@@ -11,4 +11,6 @@ public interface GameService {
     String judge(Balls balls);
 
     void gameEndOrReStart(String answerMessage);
+
+    Balls createAnswerBalls();
 }

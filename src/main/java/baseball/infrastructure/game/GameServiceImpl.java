@@ -39,4 +39,9 @@ public class GameServiceImpl implements GameService {
     public void gameEndOrReStart(String answerMessage) {
 
     }
+
+    @Override
+    public Balls createAnswerBalls() {
+        return null;
+    }
 }
