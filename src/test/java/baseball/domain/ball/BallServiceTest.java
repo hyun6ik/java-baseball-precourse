@@ -21,4 +21,12 @@ class BallServiceTest {
         assertThat(playerBalls.getBallNumberList()).containsExactly(4, 5, 6);
         assertThat(playerBalls.getBallPositionList()).containsExactly(0, 1, 2);
     }
+
+    @Test
+    void createAnswerBalls() {
+        final Balls answerBalls = ballService.createAnswerBalls();
+        assertThat(answerBalls.getBallList().size()).isEqualTo(3);
+        assertThat(answerBalls.getBallNumberList().size()).isEqualTo(3);
+        assertThat(answerBalls.getBallPositionList().size()).isEqualTo(3);
+    }
 }

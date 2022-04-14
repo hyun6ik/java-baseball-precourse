@@ -25,6 +25,7 @@ public class BallServiceImpl implements BallService {
 
     @Override
     public Balls createAnswerBalls() {
-        return null;
+        final List<Integer> numberList = ballFactory.getRandomNumbers();
+        return ballCreator.createBalls(numberList);
     }
 }
