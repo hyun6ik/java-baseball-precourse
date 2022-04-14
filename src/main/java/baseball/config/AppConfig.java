@@ -31,7 +31,7 @@ public class AppConfig {
     }
 
     public BallService ballService() {
-        return new BallServiceImpl();
+        return new BallServiceImpl(ballFactory());
     }
 
     public GameReferee gameReferee() {
@@ -42,7 +42,7 @@ public class AppConfig {
         return new GameMessengerImpl();
     }
 
-    public BallFactory gameProcessor() {
+    public BallFactory ballFactory() {
         return new BallFactoryImpl();
     }
 
