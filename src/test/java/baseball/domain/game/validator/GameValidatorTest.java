@@ -13,9 +13,9 @@ class GameValidatorTest {
 
     @Test
     @DisplayName("입력 받은 값이 숫자가 아니면 IllegalArgumentException 발생")
-    void validateIsInteger_success() {
+    void isInteger_fail() {
         final String numbers = "12a";
-        assertThatThrownBy(() -> gameValidator.validateIsInteger(numbers))
+        assertThatThrownBy(() -> gameValidator.isInteger(numbers))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage(ErrorMessage.IS_NOT_NUMBER);
     }

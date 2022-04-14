@@ -2,5 +2,7 @@ package baseball.domain.game.validator;
 
 public interface GameValidator {
 
-    void validateIsInteger(String numbers);
+    void isInteger(String numbers);
+
+    void isNotDuplicate(String numbers);
 }

@@ -6,7 +6,7 @@ import baseball.utils.messge.ErrorMessage;
 public class GameValidatorImpl implements GameValidator {
 
     @Override
-    public void validateIsInteger(String numbers) {
+    public void isInteger(String numbers) {
         for (char c : numbers.toCharArray()) {
             try {
                 Integer.parseInt(String.valueOf(c));
@@ -14,5 +14,10 @@ public class GameValidatorImpl implements GameValidator {
                 throw new IllegalArgumentException(ErrorMessage.IS_NOT_NUMBER);
             }
         }
+    }
+
+    @Override
+    public void isNotDuplicate(String numbers) {
+
     }
 }
