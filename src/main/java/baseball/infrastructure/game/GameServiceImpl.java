@@ -32,7 +32,7 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public String judge(Balls balls) {
+    public String judge(Balls playerBall, Balls answerBall) {
         return null;
     }
 
