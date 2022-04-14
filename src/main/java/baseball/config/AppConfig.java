@@ -3,13 +3,13 @@ package baseball.config;
 import baseball.application.game.GameFacade;
 import baseball.domain.ball.BallService;
 import baseball.domain.game.GameMessenger;
-import baseball.domain.game.GameProcessor;
+import baseball.domain.ball.BallFactory;
 import baseball.domain.game.GameReferee;
 import baseball.domain.game.GameService;
 import baseball.domain.game.validator.GameValidator;
 import baseball.infrastructure.ball.BallServiceImpl;
 import baseball.infrastructure.game.GameMessengerImpl;
-import baseball.infrastructure.game.GameProcessorImpl;
+import baseball.infrastructure.ball.BallFactoryImpl;
 import baseball.infrastructure.game.GameRefereeImpl;
 import baseball.infrastructure.game.GameServiceImpl;
 import baseball.infrastructure.game.validator.GameValidatorImpl;
@@ -42,8 +42,8 @@ public class AppConfig {
         return new GameMessengerImpl();
     }
 
-    public GameProcessor gameProcessor() {
-        return new GameProcessorImpl();
+    public BallFactory gameProcessor() {
+        return new BallFactoryImpl();
     }
 
     public GameValidator gameValidator() {

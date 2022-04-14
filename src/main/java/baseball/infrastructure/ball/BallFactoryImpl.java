@@ -1,14 +1,14 @@
-package baseball.infrastructure.game;
+package baseball.infrastructure.ball;
 
-import baseball.domain.game.GameProcessor;
+import baseball.domain.ball.BallFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GameProcessorImpl implements GameProcessor {
+public class BallFactoryImpl implements BallFactory {
 
     @Override
-    public List<Integer> numbersToList(String numbers) {
+    public List<Integer> numbersToIntegerList(String numbers) {
         final List<Integer> list = new ArrayList<>();
         for (char c : numbers.toCharArray()) {
             list.add(Integer.parseInt(String.valueOf(c)));
