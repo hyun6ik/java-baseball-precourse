@@ -21,7 +21,7 @@ import baseball.interfaces.game.GameController;
 public class AppConfig {
 
     public GameController gameController() {
-        return new GameController(gameFacade(),gameService());
+        return new GameController(gameFacade(),gameService(),ballService());
     }
 
     public GameFacade gameFacade() {

@@ -5,6 +5,7 @@ import baseball.domain.game.GameMessenger;
 import baseball.domain.game.GameReferee;
 import baseball.domain.game.GameService;
 import baseball.domain.game.validator.GameValidator;
+import camp.nextstep.edu.missionutils.Randoms;
 
 public class GameServiceImpl implements GameService {
 
@@ -40,8 +41,4 @@ public class GameServiceImpl implements GameService {
 
     }
 
-    @Override
-    public Balls createAnswerBalls() {
-        return null;
-    }
 }
