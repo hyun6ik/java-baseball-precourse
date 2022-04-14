@@ -13,4 +13,8 @@ public class Balls {
     public static Balls of(List<Ball> balls) {
         return new Balls(balls);
     }
+
+    public List<Ball> getBallList() {
+        return balls;
+    }
 }

@@ -17,4 +17,12 @@ public class Ball {
     public static Ball of(int number, int position) {
         return new Ball(number, position);
     }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public int position() {
+        return position;
+    }
 }
