@@ -1,12 +1,14 @@
 package baseball.config;
 
 import baseball.application.game.GameFacade;
+import baseball.domain.ball.BallCreator;
 import baseball.domain.ball.BallService;
 import baseball.domain.game.GameMessenger;
 import baseball.domain.ball.BallFactory;
 import baseball.domain.game.GameReferee;
 import baseball.domain.game.GameService;
 import baseball.domain.game.validator.GameValidator;
+import baseball.infrastructure.ball.BallCreatorImpl;
 import baseball.infrastructure.ball.BallServiceImpl;
 import baseball.infrastructure.game.GameMessengerImpl;
 import baseball.infrastructure.ball.BallFactoryImpl;
@@ -31,7 +33,7 @@ public class AppConfig {
     }
 
     public BallService ballService() {
-        return new BallServiceImpl(ballFactory());
+        return new BallServiceImpl(ballFactory(), ballCreator());
     }
 
     public GameReferee gameReferee() {
@@ -50,6 +52,9 @@ public class AppConfig {
         return new GameValidatorImpl();
     }
 
+    public BallCreator ballCreator() {
+        return new BallCreatorImpl();
+    }
 
 
 

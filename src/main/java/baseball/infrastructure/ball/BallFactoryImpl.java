@@ -18,12 +18,5 @@ public class BallFactoryImpl implements BallFactory {
         return list;
     }
 
-    @Override
-    public Balls createBalls(List<Integer> numberList) {
-        List<Ball> ballList = new ArrayList<>();
-        for (int i = 0; i < numberList.size(); i++) {
-            ballList.add(Ball.of(numberList.get(i), i));
-        }
-        return Balls.of(ballList);
-    }
+
 }

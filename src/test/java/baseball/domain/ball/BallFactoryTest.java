@@ -1,12 +1,8 @@
 package baseball.domain.ball;
 
 import baseball.infrastructure.ball.BallFactoryImpl;
-import org.assertj.core.api.Assertions;
-import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
@@ -24,11 +20,5 @@ class BallFactoryTest {
         assertThat(list).containsExactly(1, 2, 3);
     }
 
-    @Test
-    @DisplayName("Balls 만들기")
-    void createBalls() {
-        final ArrayList<Integer> list = Lists.newArrayList(1, 2, 3);
-        final Balls balls = ballFactory.createBalls(list);
-        assertThat(balls.getBallList().size()).isEqualTo(3);
-    }
+
 }
