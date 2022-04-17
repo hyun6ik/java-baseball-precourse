@@ -8,8 +8,8 @@ public interface GameService {
 
     void validateNumber(String numbers);
 
-    String judge(Balls playerBall, Balls anserBall);
+    boolean judge(Balls playerBall, Balls answerBall);
 
-    void gameEndOrReStart(String answerMessage);
+    void gameEndOrReStart(boolean isAnswer);
 
 }

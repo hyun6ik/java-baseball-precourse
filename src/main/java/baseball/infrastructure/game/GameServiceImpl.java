@@ -5,7 +5,7 @@ import baseball.domain.game.GameMessenger;
 import baseball.domain.game.GameReferee;
 import baseball.domain.game.GameService;
 import baseball.domain.game.validator.GameValidator;
-import camp.nextstep.edu.missionutils.Randoms;
+import baseball.domain.hint.Hint;
 
 public class GameServiceImpl implements GameService {
 
@@ -32,12 +32,14 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public String judge(Balls playerBall, Balls answerBall) {
-        return null;
+    public boolean judge(Balls playerBall, Balls answerBall) {
+        final Hint hint = gameReferee.getHint(playerBall, answerBall);
+        gameMessenger.sendHint(hint);
+        return gameReferee.judgeIsAnswer(hint);
     }
 
     @Override
-    public void gameEndOrReStart(String answerMessage) {
+    public void gameEndOrReStart(boolean isAnswer) {
 
     }
 

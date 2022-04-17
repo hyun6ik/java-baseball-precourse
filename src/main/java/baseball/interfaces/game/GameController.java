@@ -20,7 +20,7 @@ public class GameController {
     public void baseBallGame() {
         final Balls answerBall = ballService.createAnswerBalls();
         final Balls playerBall = gameFacade.requestPlayerBalls();
-        final String answerMessage = gameService.judge(playerBall, answerBall);
-        gameService.gameEndOrReStart(answerMessage);
+        final boolean isAnswer = gameService.judge(playerBall, answerBall);
+        gameService.gameEndOrReStart(isAnswer);
     }
 }
