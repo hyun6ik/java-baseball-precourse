@@ -55,4 +55,26 @@ class GameRefereeTest {
         assertThat(hint.getBall()).isEqualTo(1);
     }
 
+    @Test
+    @DisplayName("3스트라이크면 true를 반환")
+    void judgeIsAnswer_true() {
+        //given
+        final Hint hint = Hint.of(3, 0);
+        //when
+        final boolean isAnswer = gameReferee.judgeIsAnswer(hint);
+        //then
+        assertThat(isAnswer).isTrue();
+    }
+
+    @Test
+    @DisplayName("3스트라이크가 아니면 false를 반환")
+    void judgeIsAnswer_false() {
+        //given
+        final Hint hint = Hint.of(2, 1);
+        //when
+        final boolean isAnswer = gameReferee.judgeIsAnswer(hint);
+        //then
+        assertThat(isAnswer).isFalse();
+    }
+
 }

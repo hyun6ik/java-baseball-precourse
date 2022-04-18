@@ -27,6 +27,6 @@ public class GameRefereeImpl implements GameReferee {
 
     @Override
     public boolean judgeIsAnswer(Hint hint) {
-        return false;
+        return hint.getStrike() == Number.THREE;
     }
 }
