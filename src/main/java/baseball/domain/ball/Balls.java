@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Balls {
 
-    private List<Ball> balls;
+    private final List<Ball> balls;
 
     public Balls(List<Ball> balls) {
         this.balls = balls;
@@ -31,5 +31,13 @@ public class Balls {
         balls.iterator()
                 .forEachRemaining(ball -> list.add(ball.getPosition()));
         return list;
+    }
+
+    public boolean isBall(Ball ball) {
+        return this.getBallNumberList().contains(ball.getNumber());
+    }
+
+    public boolean isStrike(Ball ball) {
+        return this.getBallList().get(ball.getPosition()).isStrike(ball);
     }
 }
