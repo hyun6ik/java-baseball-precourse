@@ -18,7 +18,7 @@ public class GameController {
     }
 
     public boolean baseBallGame() {
-        boolean isAnswer = false;
+        boolean isAnswer;
         final Balls answerBall = ballService.createAnswerBalls();
         do {
             final Balls playerBall = gameFacade.requestPlayerBalls();

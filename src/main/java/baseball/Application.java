@@ -9,7 +9,7 @@ public class Application {
         final AppConfig appConfig = new AppConfig();
         final GameController gameController = appConfig.gameController();
 
-        boolean isContinue = false;
+        boolean isContinue;
         do {
             isContinue = gameController.baseBallGame();
         } while (isContinue);
