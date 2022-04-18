@@ -23,7 +23,7 @@ public class GameController {
         do {
             final Balls playerBall = gameFacade.requestPlayerBalls();
             isAnswer = gameService.judge(playerBall, answerBall);
-        } while (isAnswer);
+        } while (!isAnswer);
         return gameService.gameEndOrReStart();
     }
 }

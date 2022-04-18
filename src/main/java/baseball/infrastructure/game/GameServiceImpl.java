@@ -40,7 +40,9 @@ public class GameServiceImpl implements GameService {
 
     @Override
     public boolean gameEndOrReStart() {
-        return true;
+        final String responseAnswer = gameMessenger.requestContinueOrStop();
+        gameValidator.validateContinueOrStop(responseAnswer);
+        return gameReferee.judgeContinueOrStop(responseAnswer);
     }
 
 }

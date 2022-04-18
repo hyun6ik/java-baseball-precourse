@@ -35,10 +35,11 @@ public class GameMessengerImpl implements GameMessenger {
 
     @Override
     public String requestContinueOrStop() {
-        return null;
+        printMessage(TextMessage.CONTINUE_OR_END);
+        return Console.readLine();
     }
 
     private void printMessage(String message) {
-        System.out.print(message);
+        System.out.println(message);
     }
 }

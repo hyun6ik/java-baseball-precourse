@@ -29,4 +29,9 @@ public class GameRefereeImpl implements GameReferee {
     public boolean judgeIsAnswer(Hint hint) {
         return hint.getStrike() == Number.THREE;
     }
+
+    @Override
+    public boolean judgeContinueOrStop(String responseAnswer) {
+        return responseAnswer.equals(Number.CONTINUE);
+    }
 }
