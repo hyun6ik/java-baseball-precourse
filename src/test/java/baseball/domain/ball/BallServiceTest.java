@@ -16,15 +16,20 @@ class BallServiceTest {
 
     @Test
     void createPlayerBalls() {
+        //given
         final String numbers = "456";
+        //when
         final Balls playerBalls = ballService.createPlayerBalls(numbers);
+        //then
         assertThat(playerBalls.getBallNumberList()).containsExactly(4, 5, 6);
         assertThat(playerBalls.getBallPositionList()).containsExactly(0, 1, 2);
     }
 
     @Test
     void createAnswerBalls() {
+        //given && when
         final Balls answerBalls = ballService.createAnswerBalls();
+        //then
         assertThat(answerBalls.getBallList().size()).isEqualTo(3);
         assertThat(answerBalls.getBallNumberList().size()).isEqualTo(3);
         assertThat(answerBalls.getBallPositionList().size()).isEqualTo(3);
