@@ -10,6 +10,6 @@ public interface GameService {
 
     boolean judge(Balls playerBall, Balls answerBall);
 
-    void gameEndOrReStart(boolean isAnswer);
+    boolean gameEndOrReStart();
 
 }

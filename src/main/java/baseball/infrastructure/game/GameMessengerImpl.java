@@ -33,6 +33,11 @@ public class GameMessengerImpl implements GameMessenger {
         printMessage(HintMessage.StrikeAndBall(hint.getStrike(), hint.getBall()));
     }
 
+    @Override
+    public String requestContinueOrStop() {
+        return null;
+    }
+
     private void printMessage(String message) {
         System.out.print(message);
     }

@@ -8,6 +8,10 @@ public class Application {
         // TODO: 프로그램 구현
         final AppConfig appConfig = new AppConfig();
         final GameController gameController = appConfig.gameController();
-        gameController.baseBallGame();
+
+        boolean isContinue = false;
+        do {
+            isContinue = gameController.baseBallGame();
+        } while (isContinue);
     }
 }

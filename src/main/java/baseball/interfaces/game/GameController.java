@@ -17,10 +17,13 @@ public class GameController {
         this.ballService = ballService;
     }
 
-    public void baseBallGame() {
+    public boolean baseBallGame() {
+        boolean isAnswer = false;
         final Balls answerBall = ballService.createAnswerBalls();
-        final Balls playerBall = gameFacade.requestPlayerBalls();
-        final boolean isAnswer = gameService.judge(playerBall, answerBall);
-        gameService.gameEndOrReStart(isAnswer);
+        do {
+            final Balls playerBall = gameFacade.requestPlayerBalls();
+            isAnswer = gameService.judge(playerBall, answerBall);
+        } while (isAnswer);
+        return gameService.gameEndOrReStart();
     }
 }

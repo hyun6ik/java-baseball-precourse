@@ -39,8 +39,8 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public void gameEndOrReStart(boolean isAnswer) {
-
+    public boolean gameEndOrReStart() {
+        return true;
     }
 
 }

@@ -8,4 +8,6 @@ public interface GameMessenger {
     String requestNumber();
 
     void sendHint(Hint hint);
+
+    String requestContinueOrStop();
 }
