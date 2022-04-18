@@ -1,13 +1,18 @@
 package baseball.domain.game;
 
+import baseball.domain.ball.Ball;
+import baseball.domain.ball.Balls;
+import baseball.domain.hint.Hint;
 import baseball.infrastructure.game.GameMessengerImpl;
 import baseball.infrastructure.game.GameRefereeImpl;
 import baseball.infrastructure.game.GameServiceImpl;
 import baseball.infrastructure.game.validator.GameValidatorImpl;
 import baseball.utils.messge.ErrorMessage;
+import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -46,6 +51,30 @@ class GameServiceTest {
         assertThatThrownBy(() -> gameService.validateNumber(numbers))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage(ErrorMessage.CONTAIN_DUPLICATE_NUMBER);
+    }
+
+    @Test
+    @DisplayName("3스트라이크면 true를 반환")
+    void judge_true() {
+        //given
+        final Balls answerBall = Balls.of(Lists.newArrayList(Ball.of(1, 0), Ball.of(2, 1), Ball.of(3, 2)));
+        final Balls playerBall = Balls.of(Lists.newArrayList(Ball.of(1, 0), Ball.of(2, 1), Ball.of(3, 2)));
+        //when
+        final boolean isAnswer = gameService.judge(playerBall,answerBall);
+        //then
+        assertThat(isAnswer).isTrue();
+    }
+
+    @Test
+    @DisplayName("3스트라이크가 아니면 false를 반환")
+    void judge_false() {
+        //given
+        final Balls answerBall = Balls.of(Lists.newArrayList(Ball.of(1, 0), Ball.of(2, 1), Ball.of(3, 2)));
+        final Balls playerBall = Balls.of(Lists.newArrayList(Ball.of(3, 0), Ball.of(1, 1), Ball.of(2, 2)));
+        //when
+        final boolean isAnswer = gameService.judge(playerBall, answerBall);
+        //then
+        assertThat(isAnswer).isFalse();
     }
 
 }
