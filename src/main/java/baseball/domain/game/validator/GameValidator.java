@@ -7,4 +7,6 @@ public interface GameValidator {
     void isInteger(String numbers);
 
     void isNotDuplicate(String numbers);
+
+    void validateContinueOrStop(String responseAnswer);
 }

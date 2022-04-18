@@ -16,7 +16,7 @@ public class GameValidatorImpl implements GameValidator {
      */
     @Override
     public void isThreeDigits(String numbers) {
-        if (numbers.toCharArray().length != Number.INPUT_MAX_VALUE) {
+        if (numbers.toCharArray().length != Number.THREE) {
             throw new IllegalArgumentException(ErrorMessage.IS_NOT_THREE_DIGITS);
         }
     }
@@ -40,8 +40,18 @@ public class GameValidatorImpl implements GameValidator {
         for (char aChar : numbers.toCharArray()) {
             set.add(aChar);
         }
-        if (set.size() != Number.INPUT_MAX_VALUE) {
+        if (set.size() != Number.THREE) {
             throw new IllegalArgumentException(ErrorMessage.CONTAIN_DUPLICATE_NUMBER);
+        }
+    }
+
+    /**
+     * 1(Continue) 또는 2(Stop) 말고 다른 문자를 입력했으면 에러 발생
+     */
+    @Override
+    public void validateContinueOrStop(String responseAnswer) {
+        if (!(responseAnswer.equals(Number.CONTINUE) || responseAnswer.equals(Number.STOP))) {
+            throw new IllegalArgumentException(ErrorMessage.INCORRECT_NUMBER);
         }
     }
 }

@@ -15,4 +15,8 @@ public interface Number {
 
     int THREE = 3;
     int ZERO = 0;
+
+    String CONTINUE = "1";
+    String STOP = "2";
+
 }

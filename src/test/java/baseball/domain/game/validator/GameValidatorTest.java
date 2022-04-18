@@ -44,4 +44,15 @@ class GameValidatorTest {
                 .hasMessage(ErrorMessage.CONTAIN_DUPLICATE_NUMBER);
     }
 
+    @Test
+    @DisplayName("1 또는 2가 아닌 다른 문자를 입력했을 경우 IllegalArgumentException 발생")
+    void validateContinueOrStop() {
+        //given
+        final String input = "3";
+        //when && then
+        assertThatThrownBy(() -> gameValidator.validateContinueOrStop(input))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage(ErrorMessage.INCORRECT_NUMBER);
+    }
+
 }
