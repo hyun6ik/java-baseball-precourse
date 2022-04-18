@@ -77,4 +77,26 @@ class GameRefereeTest {
         assertThat(isAnswer).isFalse();
     }
 
+    @Test
+    @DisplayName("플레이어가 1(Continue)를 입력하면 true를 반환")
+    void judgeContinueOrStop_true() {
+        //given
+        final String input = "1";
+        //when
+        final boolean result = gameReferee.judgeContinueOrStop(input);
+        //then
+        assertThat(result).isTrue();
+    }
+
+    @Test
+    @DisplayName("플레이어가 2(Stop)를 입력하면 false를 반환")
+    void judgeContinueOrStop_false() {
+        //given
+        final String input = "2";
+        //when
+        final boolean result = gameReferee.judgeContinueOrStop(input);
+        //then
+        assertThat(result).isFalse();
+    }
+
 }
