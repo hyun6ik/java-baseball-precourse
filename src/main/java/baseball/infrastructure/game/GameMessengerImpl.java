@@ -11,7 +11,7 @@ public class GameMessengerImpl implements GameMessenger {
 
     @Override
     public String requestNumber() {
-        printMessage(TextMessage.REQUEST_INPUT_NUMBER);
+        printNotLineBreakMessage(TextMessage.REQUEST_INPUT_NUMBER);
         return Console.readLine();
     }
 
@@ -42,4 +42,9 @@ public class GameMessengerImpl implements GameMessenger {
     private void printMessage(String message) {
         System.out.println(message);
     }
+
+    private void printNotLineBreakMessage(String message) {
+        System.out.print(message);
+    }
+
 }
