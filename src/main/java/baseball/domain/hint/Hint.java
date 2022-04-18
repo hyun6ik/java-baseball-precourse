@@ -2,8 +2,8 @@ package baseball.domain.hint;
 
 public class Hint {
 
-    private int strike;
-    private int ball;
+    private final int strike;
+    private final int ball;
 
     public Hint(int strike, int ball) {
         this.strike = strike;
