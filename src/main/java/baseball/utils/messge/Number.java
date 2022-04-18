@@ -12,4 +12,7 @@ public interface Number {
 
     int MAX_COUNT = 3;
     int MIN_COUNT = 0;
+
+    int THREE = 3;
+    int ZERO = 0;
 }
