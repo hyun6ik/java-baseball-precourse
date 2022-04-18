@@ -19,7 +19,7 @@ public class GameMessengerImpl implements GameMessenger {
     public void sendHint(Hint hint) {
         if (hint.getStrike() == Number.THREE) {
             printMessage(HintMessage.THREE_STRIKE);
-            printMessage(HintMessage.ANSWER);
+            printMessage(TextMessage.ANSWER);
             return;
         }
         if (hint.getBall() == Number.THREE) {
