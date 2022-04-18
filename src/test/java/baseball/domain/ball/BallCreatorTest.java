@@ -16,8 +16,11 @@ public class BallCreatorTest {
     @Test
     @DisplayName("Balls 만들기")
     void createBalls() {
+        //given
         final ArrayList<Integer> list = Lists.newArrayList(1, 2, 3);
+        //when
         final Balls balls = ballCreator.createBalls(list);
+        //then
         assertThat(balls.getBallList().size()).isEqualTo(3);
     }
 }

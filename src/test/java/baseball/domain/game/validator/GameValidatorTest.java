@@ -14,7 +14,9 @@ class GameValidatorTest {
     @Test
     @DisplayName("입력 받은 값이 3자리 수가 아니면 IllegalArgumentException 발생")
     void isThreeDigits_fail() {
+        //given
         final String numbers = "1234";
+        //when && then
         assertThatThrownBy(() -> gameValidator.isThreeDigits(numbers))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage(ErrorMessage.IS_NOT_THREE_DIGITS);
@@ -23,7 +25,9 @@ class GameValidatorTest {
     @Test
     @DisplayName("입력 받은 값이 숫자가 아니거나 0이 포함되어 있으면 IllegalArgumentException 발생")
     void isInteger_fail() {
+        //given
         final String numbers = "12a";
+        //when && then
         assertThatThrownBy(() -> gameValidator.isInteger(numbers))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage(ErrorMessage.IS_NOT_NUMBER_OR_CONTAIN_ZERO);
@@ -32,7 +36,9 @@ class GameValidatorTest {
     @Test
     @DisplayName("중복되는 숫자가 포함되어 있으면 IllegalArgumentException 발생")
     void isNotDuplicate_fail() {
+        //given
         final String numbers = "122";
+        //when && then
         assertThatThrownBy(() -> gameValidator.isNotDuplicate(numbers))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage(ErrorMessage.CONTAIN_DUPLICATE_NUMBER);
